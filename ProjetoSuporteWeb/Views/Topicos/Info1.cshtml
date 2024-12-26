@@ -1,0 +1,165 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";  // Definindo o layout
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Estilos -->
+    <style>
+        .accordion {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .accordion-button {
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .accordion-content {
+            padding: 15px;
+            background-color: #fafafa;
+            border-top: 1px solid #ddd;
+            display: none; /* Oculto por padrão */
+        }
+
+        .accordion-sub {
+            margin-top: 10px;
+            padding-left: 20px;
+            border-left: 2px solid #ccc;
+        }
+
+        .accordion-progress {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .sub-accordion-button {
+            font-size: 14px;
+            font-weight: normal;
+            border: none;
+            background: none;
+            color: #333;
+            cursor: pointer;
+            margin-top: 5px;
+            display: block; /* Faz o botão ocupar toda a linha e alinhar verticalmente */
+            margin-top: 10px; /* Espaçamento entre os botões */
+            width: 100%; /* Opcional: Define largura completa, mas pode ser ajustado conforme necessário */
+            text-align: left;
+        }
+
+        .sub-accordion-content {
+            padding: 10px;
+            background-color: #e9e9e9;
+            display: none; /* Oculto por padrão */
+        }
+
+        /* Estilo para ajustar o vídeo */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Função para alternar visibilidade (nível principal)
+            const accordionButtons = document.querySelectorAll(".accordion-button");
+            accordionButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const content = document.querySelector(`#${button.getAttribute("aria-controls")}`);
+                    const isExpanded = button.getAttribute("aria-expanded") === "true";
+                    button.setAttribute("aria-expanded", !isExpanded);
+                    content.style.display = isExpanded ? "none" : "block";
+                });
+            });
+
+            // Função para alternar visibilidade (subníveis)
+            const subAccordionButtons = document.querySelectorAll(".sub-accordion-button");
+            subAccordionButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const content = document.querySelector(`#${button.getAttribute("aria-controls")}`);
+                    const isExpanded = button.getAttribute("aria-expanded") === "true";
+                    button.setAttribute("aria-expanded", !isExpanded);
+                    content.style.display = isExpanded ? "none" : "block";
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <!-- Botão para abrir o modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Abrir Modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Título modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Este é um conteúdo de espaço reservado para mostrar o comportamento de rolagem para modais. Usamos quebras de linha repetidas para demonstrar como o conteúdo pode exceder a altura interna mínima, mostrando assim a rolagem interna. Quando o conteúdo se torna maior do que a altura máxima predefinida do modal, o conteúdo será cortado e rolável dentro do modal.<br>
+                    <!-- Repetindo o texto para rolagem -->
+                    <p>Este é um conteúdo repetido para mostrar a rolagem.</p>
+                    <p>Este é um conteúdo repetido para mostrar a rolagem.</p>
+                    <p>Este é um conteúdo repetido para mostrar a rolagem.</p>
+                    <p>Este é um conteúdo repetido para mostrar a rolagem.</p>
+                    <p>Este é um conteúdo repetido para mostrar a rolagem.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclusão do Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+ 
+   
+
+      
+</body>
+</html>

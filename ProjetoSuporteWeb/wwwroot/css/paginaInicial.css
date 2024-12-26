@@ -1,0 +1,100 @@
+﻿body /* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0A0A2A;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333;
+    /*border-bottom: 1px solid #ddd;*/ /*  esse é o que faz tem aquela linha */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+    header img {
+        height: 50px;
+    }
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            color: #007BFF;
+        }
+
+/* Hero Section */
+.hero {
+    background-color: #0a0a2a;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+    .hero h1 {
+        font-size: 2.5em;
+        margin: 0 0 10px;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+        margin: 0 0 20px;
+    }
+
+    .hero input[type="text"] {
+        padding: 10px;
+        width: 300px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 20px;
+    }
+
+/* Seções de conteúdo */
+.sections {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.section-item {
+    width: 30%;
+}
+
+    .section-item img {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .section-item h3 {
+        margin: 15px 0 10px;
+        color: #333;
+    }
+
+    .section-item p {
+        color: #777;
+        line-height: 1.5;
+    }
+
+    .section-item a {
+        color: #e74c3c;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+/* Footer */
